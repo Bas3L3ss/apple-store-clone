@@ -34,7 +34,7 @@ const ProductBuyingRightSection = ({
                   <h3 className="text-lg font-medium mb-4">Pick your finish</h3>
                   <ColorSelection
                     colorOptions={product.productOptions.filter(
-                      (opt) => opt.color
+                      (opt) => opt.color && opt.stock > 0 && opt.stock > 0
                     )}
                     selectedColor={
                       selectedOptions[ProductSelectionTypes.Color.toLowerCase()]
@@ -62,7 +62,7 @@ const ProductBuyingRightSection = ({
                   </h3>
                   <StorageSelection
                     storageOptions={product.productOptions.filter(
-                      (opt) => opt.storage
+                      (opt) => opt.storage && opt.stock > 0
                     )}
                     selectedStorage={
                       selectedOptions[
@@ -90,7 +90,7 @@ const ProductBuyingRightSection = ({
                   <h3 className="text-lg font-medium mb-4">Add accessories</h3>
                   <AccessoriesSelection
                     accessoriesOptions={product.productOptions.filter(
-                      (opt) => opt.accessories
+                      (opt) => opt.accessories && opt.stock > 0
                     )}
                     selectedAccessories={
                       selectedOptions[
@@ -120,7 +120,7 @@ const ProductBuyingRightSection = ({
                   </h3>
                   <CarrierSelection
                     carrierOptions={product.productOptions.filter(
-                      (opt) => opt.carrier
+                      (opt) => opt.carrier && opt.stock > 0
                     )}
                     selectedCarrier={
                       selectedOptions[
@@ -148,7 +148,7 @@ const ProductBuyingRightSection = ({
                   <h3 className="text-lg font-medium mb-4">Select material</h3>
                   <MaterialSelection
                     materialOptions={product.productOptions.filter(
-                      (opt) => opt.material
+                      (opt) => opt.material && opt.stock > 0
                     )}
                     selectedMaterial={
                       selectedOptions[
@@ -178,7 +178,7 @@ const ProductBuyingRightSection = ({
                   </h3>
                   <ProcessorSelection
                     processorOptions={product.productOptions.filter(
-                      (opt) => opt.processor
+                      (opt) => opt.processor && opt.stock > 0
                     )}
                     selectedProcessor={
                       selectedOptions[
@@ -206,7 +206,7 @@ const ProductBuyingRightSection = ({
                   <h3 className="text-lg font-medium mb-4">Pick your size</h3>
                   <SizeSelection
                     sizeOptions={product.productOptions.filter(
-                      (opt) => opt.size
+                      (opt) => opt.size && opt.stock > 0
                     )}
                     selectedSize={
                       selectedOptions[ProductSelectionTypes.Size.toLowerCase()]
