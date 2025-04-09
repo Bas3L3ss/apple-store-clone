@@ -9,6 +9,7 @@ import { createProduct, editProduct } from "../action/products";
 import { ProductSelectionTypes } from "../@types";
 import { useQueryClient } from "@tanstack/react-query";
 import { invalidateAllProductsCache } from "../react-query-hooks/use-get-products";
+import { formatOption } from "../lib/utils";
 
 const useProductForm = ({
   initialData,
@@ -34,6 +35,7 @@ const useProductForm = ({
       })),
     []
   );
+
   const defaultValues = useMemo(
     () => ({
       name: initialData?.name || "",
@@ -44,12 +46,7 @@ const useProductForm = ({
       category: initialData?.category || "phonecase",
       stock: initialData?.stock || 99,
       isFeatured: initialData?.isFeatured || false,
-      productSelectionStep:
-        typeof initialData?.productSelectionStep == "string"
-          ? JSON.parse(initialData?.productSelectionStep)
-          : initialData?.productSelectionStep
-          ? initialData?.productSelectionStep
-          : [],
+      productSelectionStep: initialData?.productSelectionStep,
       productOptions: initialOptions,
     }),
     [initialData, initialOptions]

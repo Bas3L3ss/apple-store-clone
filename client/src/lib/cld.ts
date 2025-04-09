@@ -1,2 +1,7 @@
 import { Cloudinary } from "@cloudinary/url-gen";
-export const cld = new Cloudinary({ cloud: { cloudName: "dz1d1qgk2" } });
+import { CLOUDINARY_CLOUD_NAME } from "../constants";
+console.log(CLOUDINARY_CLOUD_NAME);
+
+export const cld = new Cloudinary({
+  cloud: { cloudName: CLOUDINARY_CLOUD_NAME },
+});

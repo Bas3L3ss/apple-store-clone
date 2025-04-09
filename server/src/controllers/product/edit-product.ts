@@ -101,7 +101,7 @@ export const EditProduct = async (
     existingProduct.category = category;
     existingProduct.stock = stock;
     existingProduct.isFeatured = isFeatured;
-    existingProduct.productSelectionStep = productSelectionStep;
+    existingProduct.productSelectionStep = JSON.parse(productSelectionStep);
 
     await existingProduct.save({ session });
 

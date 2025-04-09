@@ -25,6 +25,9 @@
 button {
   cursor: pointer;
 }
+label {
+  cursor: pointer;
+}
 
 @layer base {
   :root {

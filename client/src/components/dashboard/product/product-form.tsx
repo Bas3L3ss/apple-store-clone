@@ -572,11 +572,19 @@ export default function ProductForm({
                   <SelectValue placeholder="Select option type" />
                 </SelectTrigger>
                 <SelectContent>
-                  {optionTypes.map((option) => (
-                    <SelectItem key={option.value} value={option.value}>
-                      {option.label}
-                    </SelectItem>
-                  ))}
+                  {optionTypes.map((option) => {
+                    if (
+                      form.watch("productSelectionStep") &&
+                      form
+                        .watch("productSelectionStep")
+                        .includes(option.label.toLowerCase())
+                    )
+                      return (
+                        <SelectItem key={option.value} value={option.value}>
+                          {option.label}
+                        </SelectItem>
+                      );
+                  })}
                 </SelectContent>
               </Select>
               {optionForm.formState.errors.optionType && (
